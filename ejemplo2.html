@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body onload="cargarCanvas()">
+    <div class="canvasformas">
+    <canvas id="circulo" width="625" height="300">
+        Este navegador no soporta canvas :$
+    </canvas>
+  </div>
+</body>
+</html>
+
+<script>
+    function cargarCanvas(){
+        cargarCirculo();
+    
+        
+    }
+
+    function cargarCirculo(){
+        let canvas01 = document.getElementById("circulo");
+        let lienzoC = canvas01.getContext("2d");
+        lienzoC.lineWidth=8;
+        lienzoC.strokeStyle="#000000";
+        lienzoC.lineCap="round";
+        lienzoC.lineJoin="round";
+        lienzoC.beginPath();
+        lienzoC.arc( 240, 144, 50, 0, 2 * Math.PI);
+        lienzoC.stroke();
+
+        //////////////////////////////////////////////////////////////////
+        /*marco la anchura y el color de trazo*/
+        lienzoC.lineWidth=8;
+        lienzoC.strokeStyle="#000000";
+        /*mejoramos las esquinas del dibujo*/
+        lienzoC.lineCap="round";
+        lienzoC.lineJoin="round";
+        /*dibujo el triangulo*/
+        lienzoC.beginPath();
+        /*me coloco en el primer vertice*/
+        lienzoC.moveTo(380,90);
+        /*empezamos a hacer las lineas*/
+        /*primer lado*/
+        lienzoC.lineTo(300,190);
+        /*segundo lado*/
+        lienzoC.lineTo(450,190);
+        /*tercer lado*/
+        lienzoC.lineTo(380,90);
+        /*termino el dibujo*/
+        lienzoC.stroke();
+
+    ////////////////////////////////////////////////////////
+    lienzoC.lineWidth=8;
+    lienzoC.strokeStyle="#000000";
+    lienzoC.strokeRect(470,90,100,100)
+
+
+
+    }
+
+</script>
